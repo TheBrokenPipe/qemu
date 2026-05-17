@@ -397,7 +397,7 @@ void cpu_get_tb_cpu_state(CPUAlphaState *env, vaddr *pc,
 #define FPCR_DYN_PLUS           (3 << FPCR_DYN_SHIFT)
 #define FPCR_DYN_MASK           (3 << FPCR_DYN_SHIFT)
 #define FPCR_MASK               (FPCR_DISABLE_MASK | FPCR_STATUS_MASK \
-                                 | FPCR_DYN_MASK | FPCR_UNDZ | FPCR_DNZ)
+                                 | FPCR_DYN_MASK | FPCR_UNDZ | FPCR_DNZ | FPCR_DNOD)
 
 /**
  * alpha_cpu_get_fpcr: Return the current FPCR value.

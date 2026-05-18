@@ -1632,11 +1632,13 @@ static void register_ev4_ipregs(AlphaCPU *cpu)
 }
 
 /* These assumptions should not be violated. */
+#pragma GCC diagnostic ignored "-Wenum-compare"
 QEMU_BUILD_BUG_ON(R_EV5_IFAULT_VA_FORM_VA_MASK != R_EV5_VA_FORM_VA_MASK);
 QEMU_BUILD_BUG_ON(R_EV5_IFAULT_VA_FORM_VPTB_MASK != R_EV5_VA_FORM_VPTB_MASK);
 QEMU_BUILD_BUG_ON(R_EV5_IFAULT_VA_FORM_NT_VA_MASK != R_EV5_VA_FORM_NT_VA_MASK);
 QEMU_BUILD_BUG_ON(R_EV5_IFAULT_VA_FORM_NT_VPTB_MASK !=
                   R_EV5_VA_FORM_NT_VPTB_MASK);
+#pragma GCC diagnostic pop
 
 static uint64_t ev5_va_form(CPUAlphaState *env, bool ifetch)
 {
@@ -2248,12 +2250,14 @@ static void register_ev5_ipregs(AlphaCPU *cpu)
 }
 
 /* These assumptions should not be violated. */
+#pragma GCC diagnostic ignored "-Wenum-compare"
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_VA_MASK != R_EV6_VA_FORM_VA_MASK);
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_VPTB_MASK != R_EV6_VA_FORM_VPTB_MASK);
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_48_VA_MASK != R_EV6_VA_FORM_48_VA_MASK);
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_48_VPTB_MASK != R_EV6_VA_FORM_48_VPTB_MASK);
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_32_VA_MASK != R_EV6_VA_FORM_32_VA_MASK);
 QEMU_BUILD_BUG_ON(R_EV6_IVA_FORM_32_VPTB_MASK != R_EV6_VA_FORM_32_VPTB_MASK);
+#pragma GCC diagnostic pop
 
 static uint64_t ev6_va_form(CPUAlphaState *env, bool ifetch)
 {
